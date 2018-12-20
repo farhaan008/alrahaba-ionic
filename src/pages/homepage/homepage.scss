@@ -1,0 +1,135 @@
+page-homepage {
+     
+    #homeMap {
+        height: 90%;
+        width: 110%;
+        margin-left: -5%;
+  }
+  .ifabwalk{margin-left:5%;margin-top: 3%;}
+  .ifabbus{margin-left:20%;margin-top: 3%;}
+  .fabiBlue {  background-color: #353556;}
+  .fabiwhite {  background-color: red;}
+  .fab ion-icon { color: black;}
+  .fab { width: 40px;  height: 40px;}
+  .ifablocation{background-color:white;}
+  .ifabtop {  top: 50px;  }
+}
+
+
+
+// //  var marker = new google.maps.Marker({
+// //           position: {
+// //             lat: this.lat,
+// //             lng: this.lng
+// //           },
+// //           setMap : this.map,
+// //       });
+// //       marker.setMap(this.map);
+// //       this.markers.push(marker);
+// showMarkers(option) {
+//     this.tempMarker=[];
+//    // this.map.empty();
+//     this.map.clear();
+
+//    if(option=='res'){
+//      this.repCheckbox = !this.repCheckbox;
+//    }
+//    if(option=='bus'){
+//      this.busCheckbox = !this.busCheckbox;
+//    }
+//    //both
+//    if(this.repCheckbox &&  this.busCheckbox){
+//      this.busbuttonColor = 'red';
+//      this.resbuttonColor = 'red';
+//      this.tempMarker.slice(0, this.tempMarker.length);
+//      this.busArray.forEach(bus=>{
+//        this.tempMarker.push({ id: bus.id, name: bus.name, lat: bus.lat, lng:bus.lng
+//        })})
+//        this.resArray.forEach(bus=>{
+//          this.tempMarker.push({ id: bus.id, name: bus.name, lat: bus.lat, lng:bus.lng
+//          })})
+
+//    }
+//    if(!this.repCheckbox &&  !this.busCheckbox){
+//      // this.map.clear();
+//      this.busbuttonColor = 'green';
+//      this.resbuttonColor = 'green';
+//    }
+
+//    //resp
+//    if(this.repCheckbox &&  !this.busCheckbox){
+//      this.tempMarker.slice(0, this.tempMarker.length);
+//      this.resbuttonColor = 'red';
+//      this.busbuttonColor = 'green'
+
+//        this.resArray.forEach(bus=>{
+//          this.tempMarker.push({ id: bus.id, name: bus.name, lat: bus.lat, lng:bus.lng
+//          })})
+//    }
+//    //bus
+//    if(!this.repCheckbox &&  this.busCheckbox){
+//      this.tempMarker.slice(0, this.tempMarker.length);
+//      this.busbuttonColor = 'red';
+//      this.resbuttonColor = 'green';
+//      this.busArray.forEach(bus=>{
+//        this.tempMarker.push({ id: bus.id, name: bus.name, lat: bus.lat, lng:bus.lng
+//        })})
+//    }
+//    // if(this.repCheckbox) {
+//    //  this.resbuttonColor = '#1471c1';
+//    //  this.tempMarker=[];
+//    // }
+
+
+//    // add marker
+//   this.tempMarker.forEach(tp=>{
+//     let markerIcon;
+//    if (tp.id == 'bus') {
+//      markerIcon = {
+//        'url': 'assets/imgs/movingBus.png',
+//        'size': { width: 40, height: 45, },
+//      }
+//    } 
+//    if (tp.id == 'res')  {
+//      markerIcon = {
+//        'url': 'assets/imgs/wmen_trans.png',
+//        'size': { width: 25, height: 40, }
+//      }
+
+//    }
+//    this.map.addMarker({
+//      title: 'tempName',
+//      icon: markerIcon,
+//      animation: 'drop',
+//      position: {
+//        lat: tp.lat,
+//        lng: tp.lng
+//      }
+//    });
+//   })
+//    //   var resloc = []
+//    //   resloc = this.tempLocation;
+//    //   resloc.forEach(res => {
+//    //     let markerIcon = {
+//    //       'url': 'assets/imgs/wmen_trans.png',
+//    //       'size': { width: 25, height: 40, }
+//    //     }
+//    //     this.map.addMarker({
+//    //       title: 'Res Location',
+//    //       icon: markerIcon,
+//    //       animation: 'drop',
+//    //       position: {
+//    //         lat: res.lat,
+//    //         lng: res.lng
+//    //       }
+//    //     });
+//    //   });
+//    // else {
+//    //   this.resbuttonColor = '#f3f1f1';
+//    //   if (!this.repCheckbox) {
+//    //     this.map.clear();
+//    //     this.busCheckbox = !this.busCheckbox;
+//    //     this.showBus();
+//    //   }
+//    // }
+//  }

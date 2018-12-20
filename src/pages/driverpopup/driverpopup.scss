@@ -1,0 +1,53 @@
+page-driverpopup {
+    .cut-text {  text-overflow: clip; overflow: hidden;  width: 160px;    height: 1.2em;    }
+    .addNew{color: #5279d0; float: right; font-size: 32px;}
+    .ieditDrver{color: #31d662; float: right; font-size: 22px;margin-right: -6px; margin-top: -7px; }
+    .modal-wrapper {
+        padding: 30px;
+        background: rgba(0,0,0,0.5);
+    }
+    ion-modal.my-popup {
+        @media (min-width: 300px) and (min-height: 500px) {  ion-backdrop { visibility: visible;  }  }
+        .modal-wrapper {
+          position: absolute;
+          overflow: hidden;
+          max-width: 280px;
+          border-radius: 2px;
+          width: 80vw;
+          height: 50vh;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          border: 0;
+          box-shadow: 0 16px 20px rgba(0,0,0,.4);
+          background-color: #fafafa;
+        }
+      }
+}
+
+ion-modal.my-popup {
+    @media (min-width: 300px) and (min-height: 500px) {
+      ion-backdrop {
+        visibility: visible;
+      }
+    }
+  
+    .modal-wrapper {
+      position: absolute;
+      overflow: hidden;
+      max-width: 280px;
+      border-radius: 2px;
+      width: 80vw;
+      height: 50vh;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border: 0;
+      box-shadow: 0 16px 20px rgba(0,0,0,.4);
+      background-color: #fafafa;
+    }
+  }

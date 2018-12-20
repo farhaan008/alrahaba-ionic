@@ -1,0 +1,15 @@
+<ion-content  padding>
+  <ion-tabs  primary >
+    <ion-tab [root]="tab2Root"   tabIcon="map"></ion-tab>
+    <ion-tab [root]="tab3Root"  [show]="resp_Tab"  tabIcon="md-walk"></ion-tab>
+    <ion-tab [root]="tab4Root"  tabIcon="bus"></ion-tab>
+    <ion-tab [root]="tab1Root"  tabIcon="md-settings"></ion-tab>
+    <ion-tab (ionSelect)="logout()"  tabIcon="md-log-out"></ion-tab>
+  </ion-tabs>
+  <!-- <ion-fab>
+    <button (click)="logout()"  ion-fab fab fab-bottom fab-right fab-fixed >Logout</button>
+  </ion-fab> -->
+</ion-content>  
+
+
+  

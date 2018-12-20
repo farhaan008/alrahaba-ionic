@@ -1,0 +1,63 @@
+<ion-grid class="item">
+    <div *ngIf="is_rtl" >
+     <img alt="logo" height="90" style="border-radius: 10px;" src="assets/imgs/umraline.jpg">
+        <img alt="logo" (click)="switchLanguage('en')" class="arabicflage"  height="30" src="assets/imgs/uk-flage.jpg">
+    </div>
+    <div *ngIf="is_ltr" >
+     <img alt="logo" height="90" style="border-radius: 10px; "  src="assets/imgs/umraline.jpg">
+
+        <img alt="logo" (click)="switchLanguage('ar')" class="arabicflage" height="30" src="assets/imgs/saudi-flage.jpg">
+    </div>
+    <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+
+
+            <!-- <div class="btn-wrapper">
+                <img alt="logo" height="90" style="border-radius: 10px;" src="assets/imgs/umraline.jpg">
+            </div> -->
+
+            <br>
+            <br>
+
+            <form *ngIf="is_ltr" [formGroup]="form" dir="ltr">
+                <div class="formtab" padding>
+
+                    <ion-item>
+                        <ion-input class="item" type="text" formControlName="Username" required placeholder="{{ 'Username' | translate }}"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-input type="password" formControlName="password" required placeholder="{{ 'Password' | translate }}"></ion-input>
+                    </ion-item>
+
+                    <br>
+                    <button type="submit" (click)="login()" class="button" color="secondary" [disabled]="!form.valid"
+                        ion-button full>{{ 'Login' | translate }}</button>
+                </div>
+            </form>
+
+            <form *ngIf="is_rtl" [formGroup]="form" dir="rtl">
+                <div class="formtab" padding>
+
+                    <ion-item>
+                        <!-- <ion-label floating>Username</ion-label> -->
+                        <ion-input class="item" dir="rtl" type="text" formControlName="Username" required placeholder="{{ 'Username' | translate }}"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <!-- <ion-label floating>Password</ion-label> -->
+                        <ion-input type="password" dir="rtl" formControlName="password" required placeholder="{{ 'Password' | translate }}"></ion-input>
+                    </ion-item>
+
+                    <br>
+                    <button type="submit" (click)="login()" class="button" color="secondary" [disabled]="!form.valid"
+                        ion-button full>{{ 'Login' | translate }}</button>
+                </div>
+            </form>
+        </ion-col>
+    </ion-row>
+    <!-- <div class="btn-wrapper">
+        <button ion-button (click)=" switchLanguage('en')" class="textcolor" [ngStyle]="{'background-color': buttonColor}">English</button>
+        <button ion-button (click)="switchLanguage('ar')" class="textcolor" [ngStyle]="{'background-color': buttonColorArabic}">Arabic</button>
+    </div> -->
+</ion-grid>

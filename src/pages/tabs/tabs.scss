@@ -1,0 +1,16 @@
+page-tabs {
+    .arabicflage{
+        float: right;
+        width: 40px;
+    }
+    .ion-md-customMatches { 
+        content: url("../../assets/imgs/uk-flage.jpg"); min-width: 1.1em !important; min-height: 1.1em !important; width: 28px !important; } 
+        .tabs-md .tab-button[aria-selected=true] { .ion-md-customMatches {  content: url("../../assets/imgs/uk-flage.jpg"); } }
+    .ion-md-flageng {  content: url("../../assets/imgs/uk-flage.jpg"); min-width: 1.1em !important; min-height: 23px  !important; width: 20px !important;     border-radius: 36px !important; } 
+    .tabs-md .tab-button[aria-selected=true] { .ion-md-flageng {   content: url("../../assets/imgs/uk-flage.jpg"); } }
+    .ion-md-flagar { content: url("../../assets/imgs/saudi-flage.jpg"); min-width: 1.1em !important; min-height: 23px  !important; width: 20px !important;    border-radius: 36px !important; } 
+    .tabs-md .tab-button[aria-selected=true] { .ion-md-flagar {   content: url("../../assets/imgs/saudi-flage.jpg"); } }
+    ion-tabs.hidden div.tabbar {
+        display: none
+    }
+}

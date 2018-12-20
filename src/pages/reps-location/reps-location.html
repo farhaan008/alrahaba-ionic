@@ -1,0 +1,20 @@
+<ion-header>
+ 
+</ion-header>
+    <br><br><br><br>
+    <ion-row *ngFor="let loc of tempLocation" class="tempLocation">
+      <ion-col col-4>
+      {{loc.name}}
+      </ion-col>
+      <ion-col col-4>
+        {{loc.date}}
+      </ion-col>
+      <ion-col col-2>
+        {{loc.id}}
+      </ion-col>
+      <ion-col col-2 >
+          <img alt="logo" (click)="locationGet(loc)"  height="30" src="assets/imgs/rahaba_icon.png">
+      </ion-col>
+    </ion-row>
+ 
+  

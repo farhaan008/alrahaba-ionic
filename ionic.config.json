@@ -1,0 +1,7 @@
+{
+  "name": "itrahabamobileapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

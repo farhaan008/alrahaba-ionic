@@ -1,0 +1,19 @@
+<ion-header>
+</ion-header>
+<ion-content padding >
+   <ion-fab class="ifabwalk">
+   <button  [ngStyle]="{'background-color': resbuttonColor}" type="check" ion-fab [(ngModel)]="repCheckbox"  name="Rep" ngDefaultControl ><ion-icon  name="md-contact"></ion-icon></button>
+</ion-fab>
+ <ion-fab class="ifabbus">
+    <button [ngStyle]="{'background-color': busbuttonColor}" type="checkbox" ion-fab [(ngModel)]="busCheckbox" name="Bus" ngDefaultControl  (click)="showBus()" ><ion-icon  name="bus"></ion-icon></button>
+</ion-fab>
+<!-- <ion-fab top *ngIf="setDirection=='ar'"   class="ifabtop">
+  <button class="ifablocation" ion-fab (click)="moveLocation()"><ion-icon  name="md-locate"></ion-icon></button>
+</ion-fab> -->
+<ion-fab top  right  class="ifabtop">
+  <button class="ifablocation" ion-fab (click)="moveLocation()"><ion-icon  name="md-locate"></ion-icon></button>
+</ion-fab>
+  <div #map  id="map"></div> 
+  <!-- <button ion-button full>Add Markers</button> -->
+</ion-content>
+<!-- [ngStyle]="repCheckbox=='true' ? {'background-color': blue}:{'background-color': white}" (click)="showRep" -->

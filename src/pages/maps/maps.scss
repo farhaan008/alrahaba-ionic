@@ -1,0 +1,23 @@
+page-maps {
+    
+     #map {
+            height: 186%;
+            width: 110%;
+            margin-left: -5%;
+            margin-top: -25px;
+      }
+      #map_canvas{
+            height: 100%;
+            width: 110%;
+            margin-left: -5%;
+            margin-top: -25px;
+      }
+      .ifabwalk{margin-left:5%;margin-top: 3%;}
+      .ifabbus{margin-left:20%;margin-top: 3%;}
+      .fabiBlue {  background-color: #353556;}
+      .fabiwhite {  background-color: red;}
+      .fab ion-icon { color: black;}
+      .fab { width: 40px;  height: 40px;}
+      .ifablocation{background-color:white;}
+      .ifabtop {  top: 50px;  }
+}

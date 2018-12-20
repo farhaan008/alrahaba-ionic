@@ -1,0 +1,16 @@
+<ion-header>
+   
+  </ion-header>
+  
+  <ion-content padding>
+          <ion-fab class="ifabwalk">
+              <button  [ngStyle]="{'background-color': resbuttonColor}" type="check" ion-fab [(ngModel)]="repCheckbox"  name="Rep" ngDefaultControl (click)="showRep()" ><ion-icon  name="md-contact"></ion-icon></button>
+           </ion-fab>
+            <ion-fab class="ifabbus">
+               <button [ngStyle]="{'background-color': busbuttonColor}" type="checkbox" ion-fab [(ngModel)]="busCheckbox" name="Bus" ngDefaultControl  (click)="showBus()" ><ion-icon  name="bus"></ion-icon></button>
+           </ion-fab>
+      
+           <div #homeMap  id="homeMap"></div> 
+     <button ion-fab center (click)="onDissmiss()">Close</button>
+  </ion-content>
+  

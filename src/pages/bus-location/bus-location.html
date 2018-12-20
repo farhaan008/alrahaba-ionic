@@ -1,0 +1,108 @@
+<ion-header>
+
+</ion-header>
+<br><br><br><br>
+<span [dir]="setDirction">
+    <span *ngIf="istranspoertList">
+        <ion-row *ngFor="let loc of transpoertList;let index=index" class="tempLocation" (click)="showDetails(index)">
+            <ion-col col-2>
+                {{loc.date.split('T')[1].split(':')[0]}}:{{loc.date.split('T')[1].split(':')[1]}}
+            </ion-col>
+            <ion-col col-2>
+                {{loc.tripId}}
+            </ion-col>
+            <ion-col col-3 class="cut-text">
+                {{(isLanguage=='eng') ? loc.externalAgents[0].nameEng:loc.externalAgents[0].nameAr}}.
+            </ion-col>
+            <ion-col col-2 class="cut-text">
+                {{ (isLanguage=='eng') ?
+                loc.tripDetails_From.hotelTerminalNameEng:loc.tripDetails_From.hotelTerminalNameAr}}
+            </ion-col>
+            <ion-col col-2 class="cut-text">
+                {{(isLanguage=='eng') ?
+                loc.tripDetails_To.hotelTerminalNameEng:loc.tripDetails_To.hotelTerminalNameAr}}
+            </ion-col>
+            <ion-col col-1>
+                <img alt="logo" (click)=" locationGet(loc)" height="20" src="assets/imgs/rahaba_icon.png">
+            </ion-col>
+        </ion-row>
+    </span>
+
+    <span *ngIf="!istranspoertList">
+        <ion-scroll style="width:100%;height:100vh" scrollY="true">
+            <ion-list scroll="true">
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_date')}} :
+                    {{transpoertList[indexOflist].date.split('T')[0]}}&ensp;
+                    {{transpoertList[indexOflist].date.split('T')[1].split(':')[0]}}:{{transpoertList[indexOflist].date.split('T')[1].split(':')[1]}}<ion-icon
+                        ios="ios-close" (click)=" hideDetails(loc)" item-right md="md-close"></ion-icon>
+                </ion-item>
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_tripid')}} :
+                    {{transpoertList[indexOflist].tripId}}</ion-item>
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_ExternalAgent')}} : {{
+                    (isLanguage!='ar') ? transpoertList[indexOflist].externalAgents[0].nameEng
+                    :transpoertList[indexOflist].externalAgents[0].nameAr}}</ion-item>
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_Flight')}}: </ion-item>
+
+                <!-- For Uo & ea -->
+                <ion-item *ngIf="transpoertList[indexOflist].to.nameAr!=null && transpoertList[indexOflist].status!=7 && !isTo ">
+                    {{_LanguageService.DynamicTextContent('mobileApp_busTable_TOName')}} :
+                    <span> {{ (isLanguage !='ar') ? transpoertList[indexOflist].to.nameEng :
+                        transpoertList[indexOflist].to.nameAr}}</span>
+                </ion-item>
+                <ion-item *ngIf="transpoertList[indexOflist].to.nameAr==null || transpoertList[indexOflist].status==7 && !isTo">
+                    <ion-label class="Tolable">{{_LanguageService.DynamicTextContent('mobileApp_busTable_TOName')}} :</ion-label>
+                    <ion-select placeholder="{{setTosPlace}}" [(ngModel)]="toChange" (ionChange)="onChangeTo(toChange)">
+                        <ion-option *ngFor="let tos of unSubscribeTos" value="{{tos.id}}">
+                            {{(isLanguage=='eng') ? tos.nameEng : tos.nameAr}}
+                        </ion-option>
+                    </ion-select>
+                </ion-item>
+                <!-- for TO user -->
+                <ion-item *ngIf="isTo">
+                    {{_LanguageService.DynamicTextContent('mobileApp_busTable_TOName')}} :
+                    {{(isLanguage=='en') ? transpoertList[indexOflist].to.nameEng
+                    :transpoertList[indexOflist].to.nameAr}}
+                </ion-item>
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_TransactionType')}} :
+                    {{(isLanguage=='en') ? transpoertList[indexOflist].vehicleType.nameEng
+                    :transpoertList[indexOflist].vehicleType.nameAr}}</ion-item>
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_VehicleType')}} :
+                    {{(isLanguage=='en') ? transpoertList[indexOflist].transportType.nameEng
+                    :transpoertList[indexOflist].transportType.nameAr}}</ion-item>
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_plateNum')}} : </ion-item>
+                <!-- <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_Driver')}}  : {{(isLanguage=='en') ? transpoertList[indexOflist].driver.nameEng :transpoertList[indexOflist].driver.nameAr}}</ion-item> -->
+                <ion-item>
+                    <ion-label>{{_LanguageService.DynamicTextContent('mobileApp_busTable_Driver')}} :
+                        <button  class="addDriver"  name="Driver" placeholder="Driver" (click)="DriverList()">
+                            <span *ngIf="selectedDriver==null">{{(isLanguage=='en') ?
+                                transpoertList[indexOflist].driver.nameEng
+                                :transpoertList[indexOflist].driver.nameAr}}<ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon></span>
+                            <span *ngIf="selectedDriver!=null">{{selectedDriver}}<ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon></span>
+                        </button>
+                        <!-- <span *ngIf="transpoertList[indexOflist].to.nameAr!=null && transpoertList[indexOflist].status!=7 && isdisableDriver">
+                            {{(isLanguage=='en') ?
+                            transpoertList[indexOflist].driver.nameEng:transpoertList[indexOflist].driver.nameAr}}
+                        </span> -->
+                    </ion-label>
+                </ion-item>
+                <!-- <ion-item *ngIf="isTo">
+                    {{_LanguageService.DynamicTextContent('mobileApp_busTable_Driver')}} :
+                    {{(isLanguage=='en') ? transpoertList[indexOflist].driver.nameEng
+                    :transpoertList[indexOflist].driver.nameAr}}
+                </ion-item> -->
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_DriverMobile')}} :
+                    <span *ngIf="selectedDriver!='Select Driver'"> {{transpoertList[indexOflist].driver.phoneNumber}}</span>
+                    <span *ngIf="selectedDriver=='Select Driver'"></span>
+                </ion-item>
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_From')}} : {{ (isLanguage=='en') ?
+                    transpoertList[indexOflist].tripDetails_From.hotelTerminalNameEng:transpoertList[indexOflist].tripDetails_From.hotelTerminalNameAr}}</ion-item>
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_To')}} : {{(isLanguage=='en') ?
+                    transpoertList[indexOflist].tripDetails_To.hotelTerminalNameEng:transpoertList[indexOflist].tripDetails_To.hotelTerminalNameAr}}</ion-item>
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_Leader')}} :
+                    {{transpoertList[indexOflist].leader.id}}</ion-item>
+                <ion-item>{{_LanguageService.DynamicTextContent('mobileApp_busTable_LeaderMobile')}} :
+                    {{transpoertList[indexOflist].leader.phoneNumber}}</ion-item>
+            </ion-list>
+        </ion-scroll>
+    </span>
+</span>

@@ -1,0 +1,19 @@
+page-bus-location {
+    .button{ height: 45px;}
+    .btn-wrapper { text-align: center; }
+    .textcolor{ color: black; }
+    .arabicflage{ float: right; width: 40px; }
+    .cintent{  margin-top: 10px; }
+    .tempLocation{border-bottom: 1px solid; line-height: 14px; }
+    .inavigate  {margin-left: 20px;}
+    .cut-text {  text-overflow: clip; overflow: hidden;  width: 160px;    height: 1.2em;    }
+    .addDriver {  height: 30px;     border-radius: 6px; background-color: white;  font-size: 16px;  margin-left: 32px; border: 1px solid #c3c1c1; width: 40% ;}
+    .dropdownArrow{margin-right: -76px;}
+    ion-select { width: 135px;  border: 1px solid #c3c1c1; border-radius: 8px;   height: 32px;}
+    .Tolable {  max-width: 103px; color: black }
+    .select-text {min-width: 34px;  min-height: 16px; margin-top: -4px;}
+   .select-md .select-placeholder {color: #080808;     margin-top: -6px;}
+   .item-input .label-md, .item-select .label-md, .item-datetime .label-md { color: #171616;}
+//    .ion-md-arrow-dropdown:before { content: "\f280";margin-right: -81px; }
+}
+

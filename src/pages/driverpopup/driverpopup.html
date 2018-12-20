@@ -1,0 +1,26 @@
+<!--
+  Generated template for the DriverpopupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header  class="sample-modal-page">
+  <ion-navbar>
+    <ion-title>Driver : <ion-icon *ngIf="!isTo" (click)="addnewDriver()" class="addNew" ios="ios-add-circle" md="md-add-circle"></ion-icon></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+    <ion-scroll style="width:100%;height:85%" scrollY="true">
+        <ion-list >
+            <ion-item *ngFor="let dri of DriverList;let index=index">
+                <ion-row>
+                    <ion-col col-5 (click)="onChangeDriver(dri.id,dri.name)">{{dri.name}}</ion-col>
+                    <ion-col col-5  (click)="onChangeDriver(dri.id,dri.name)">{{dri.phoneNumber}}</ion-col>
+                    <ion-col col-2 *ngIf="!isTo"  class="ieditDrver"> <ion-icon  (click)="editDriver(index)" class="ieditDrver" name="create"></ion-icon></ion-col>
+                </ion-row>
+            </ion-item>
+      </ion-list>
+  </ion-scroll> 
+  <button ion-button block  (click)="onDissmiss()">Cancel</button>
+<!-- <button ion-button block  (click)="onDissmiss()">Ok</button> -->
+</ion-content>
